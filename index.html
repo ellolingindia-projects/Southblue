@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vela Event Management</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-left">
+    <div class="logo" onclick="location.reload()">VELA</div>
+  </div>
+
+  <div class="header-center">
+    <div class="search-box" onclick="toggleSearch()">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <span class="placeholder">Search for Services, Events...</span>
+    </div>
+  </div>
+
+  <div class="header-right">
+    <div class="header-item menu-btn" onclick="toggleMenu()">
+      <i class="fa-solid fa-ellipsis-vertical"></i>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Search -->
+<div class="mobile-search" onclick="toggleSearch()">
+  <i class="fa-solid fa-magnifying-glass"></i> Search for Services, Events...
+</div>
+
+<!-- Dropdown Menu -->
+<div class="dropdown-menu" id="dropdownMenu">
+  <ul>
+    <li onclick="window.location.href='download-app.html'">Download App</li>
+    <li onclick="window.location.href='advertise.html'">Contact Us</li>
+    <li onclick="window.location.href='partner.html'">Become a Partner</li>
+  </ul>
+</div>
+
+<!-- Search Panel -->
+<div class="search-panel" id="searchPanel">
+  <div class="search-header">
+    <button class="back-btn" onclick="toggleSearch()">←</button>
+    <div class="search-input">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchBar" placeholder="Search for Services, Events..." oninput="showResults(this.value)">
+    </div>
+  </div>
+  <ul class="results" id="resultsList"></ul>
+  <div class="request-box" id="requestBox">
+    <p>Can’t find your service?</p>
+    <button class="request-btn" onclick="requestService()">Request Service</button>
+  </div>
+</div>
+
+
+<!-- Categories -->
+<section class="hero-categories">
+  <h3>Plan Your Dream Event</h3>
+  <div class="categories-grid">
+    <div class="category"><a href="stage-decoration.html"><img src="stage decoration.jpg" alt=""></a><p>Stage Decoration</p></div>
+    <div class="category"><a href="photography.html"><img src="photography.jpg" alt=""></a><p>Photography</p></div>
+    <div class="category"><a href="catering.html"><img src="catering.jpg" alt=""></a><p>Foods</p></div>
+    <div class="category"><a href="dj-music.html"><img src="music_concert.jpg" alt=""></a><p>DJ & Music</p></div>
+    <div class="category"><a href="bridal-styling.html"><img src="bridal.jpg" alt=""></a><p>Bridal & Groom Styling</p></div>
+    <div class="category"><a href="mehndi-artist.html"><img src="mehandi-wedding.jpg" alt=""></a><p>Mehandi Artist</p></div>
+    <div class="category"><a href="invitations.html"><img src="invitation.jpg" alt=""></a><p>Invitations</p></div>
+    <div class="category"><a href="seat-arrangement.html"><img src="seatarrangement.jpg" alt=""></a><p>Hall & Seating</p></div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services">
+  <h2>Celebrate Any Occasion</h2>
+  <div class="service-grid">
+    <a href="wedding.html" class="service-card"><img src="wedding-event-services.jpg" alt=""><h4>Wedding Planning</h4><p>Complete wedding planning with stage design, catering & decor.</p></a>
+    <a href="birthday.html" class="service-card"><img src="birthday.jpg" alt=""><h4>Birthday Events</h4><p>Custom themes, cakes, photography & full decoration.</p></a>
+    <a href="corporate.html" class="service-card"><img src="corporate.jpg" alt=""><h4>Corporate Events</h4><p>Professional AV, catering & logistics for corporates.</p></a>
+    <a href="cultural.html" class="service-card"><img src="cultural.jpg" alt=""><h4>Cultural Shows</h4><p>Sound, light & venue management for cultural events.</p></a>
+  </div>
+</section>
+
+<!-- Top Picks -->
+<section class="event-list">
+  <h3>People's Favorites</h3>
+  <div class="event-grid" id="eventGrid"></div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer__container">
+    <!-- Logo & Social -->
+    <div class="footer__logo">
+      <h2 class="footer__logo-title">Vela</h2>
+      <p class="footer__logo-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+      <div class="footer__social">
+        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer__social-link"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer__links">
+      <h3 class="footer__section-title">Quick Links</h3>
+      <ul class="footer__list">
+        <li class="footer__list-item"><a href="index.html" class="footer__list-link">Home</a></li>
+        <li class="footer__list-item"><a href="#" class="footer__list-link">About Us</a></li>
+        <li class="footer__list-item"><a href="#wedding-services" class="footer__list-link">Categories</a></li>
+        <li class="footer__list-item"><a href="Enquiry.html" class="footer__list-link">Enquiry</a></li>
+      </ul>
+    </div>
+
+    <!-- Categories -->
+    <div class="footer__links">
+      <h3 class="footer__section-title">Categories</h3>
+      <ul class="footer__list">
+        <li class="footer__list-item"><a href="#" class="footer__list-link">Stage Decoration</a></li>
+        <li class="footer__list-item"><a href="#" class="footer__list-link">DJ & Light Music</a></li>
+        <li class="footer__list-item"><a href="#" class="footer__list-link">Mehandi Artist</a></li>
+        <li class="footer__list-item"><a href="#" class="footer__list-link">Bridal & Groom Styling</a></li>
+        <li class="footer__list-item"><a href="#" class="footer__list-link">Photography & Videography</a></li>
+        <li class="footer__list-item"><a href="#" class="footer__list-link">Invitation & Stationery</a></li>
+        <li class="footer__list-item"><a href="#" class="footer__list-link">Hall & Seating Arrangement</a></li>
+        <li class="footer__list-item"><a href="#" class="footer__list-link">Catering & Menu Design</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer__bottom">
+    <p>By Continuing Past This Page, You Agree To Our Terms Of Service, Privacy Policy, Cookie Policy, And Content Guidelines. 
+    All Trademarks Are The Property Of Their Respective Owners. 2025 ©. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
